@@ -13,18 +13,11 @@
             @endforeach
         </select>
         <div>
+            @foreach(hash_algos() as $option)
             <label>
-                <input type="checkbox" name="hash[]" value="sha1"> sha1
+                <input type="checkbox" name="hash[]" value="{{ $option }}"> {{ $option }}
             </label>
-            <label>
-                <input type="checkbox" name="hash[]" value="md5"> md5
-            </label>
-            <label>
-                <input type="checkbox" name="hash[]" value="hash"> hash
-            </label>
-            <label>
-                <input type="checkbox" name="hash[]" value="crypt"> crypt
-            </label>
+            @endforeach
         </div>
         <button type="submit">Get hash</button>
     </form>
